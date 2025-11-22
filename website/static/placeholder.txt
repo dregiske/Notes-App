@@ -1,0 +1,11 @@
+This folder is for assets that can be
+loaded into the html files for custom designs
+
+EXAMPLE (loading in a JavaScript function into HTML file):
+In your HTML body write:
+'''
+<script
+	type="text/javascript"
+	src="{{ url_for('static', filename='index.js') }}
+></script>
+'''
