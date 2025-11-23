@@ -7,8 +7,6 @@ from flask_sqlalchemy import SQLAlchemy
 
 from .models import User, Note
 
-from os import path
-
 
 db = SQLAlchemy
 DB_NAME = "database.db"
