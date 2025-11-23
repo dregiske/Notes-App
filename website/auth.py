@@ -8,6 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 auth = Blueprint('auth', __name__)
 
+
 @auth.route('/signup', methods=['GET', 'POST'])
 def signup():
 	if request.method == 'POST':
@@ -25,8 +26,7 @@ def signup():
 		if len(password1) < 7:
 			flash('Password must be at least 7 characters long.', category='error')
 		else:
-			hashed_password = generate_password_hash(password1, method='sha256')
-
+			hashed_password = generate_password_hash(password1, method='scrypt')
 			new_user = User(email=email,
 							password=hashed_password,
 							first_name=firstName,
